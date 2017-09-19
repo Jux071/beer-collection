@@ -1,0 +1,9 @@
+<%= form_for @country, html: { multipart: true } do |form|%>	
+	<%= form.label :name %>
+  <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
+  <br>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <br>
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
+<% end %>

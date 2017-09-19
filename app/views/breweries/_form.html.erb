@@ -1,0 +1,6 @@
+<%= form_for @brewery do |form|%>	
+  <%= form.label :name %>
+  <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
+  <br>  
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
+<% end %>

@@ -1,0 +1,5 @@
+<tr>
+	<td><%= link_to style.name, style_path(style) %></td>	
+	<td><%= link_to ' Edit', edit_style_path(style), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
+			<%= link_to ' Delete', style_path(style), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
+</tr>

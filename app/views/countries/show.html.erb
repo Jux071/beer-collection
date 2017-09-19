@@ -1,0 +1,23 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag @country.image.url(:medium) %>
+    </a>
+  </div>
+  <div class="media-body">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Name</h3>
+      </div>
+      <div class="panel-body">
+        <%= @country.name %>
+      </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Beers <span class="badge"><%= @country.beers.count %></span></h3>
+      </div>
+      <div class="panel-body">
+        <%= render 'beer' %>
+      </div>
+    </div>
+  </div>
+</div>

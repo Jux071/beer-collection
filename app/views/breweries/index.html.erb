@@ -1,0 +1,19 @@
+<div class="row col-md-5">
+	<div class="well well-sm"><h3>Breweries <%= link_to 'Add new brewery', new_brewery_path, class: 'btn btn-sm btn-primary' %></h3>
+		
+  </div>
+  
+  <div class="panel panel-default">  
+  	<div class="panel-heading"><strong>Brewery details</strong></div>  
+  		<table class="table table-hover table-striped">	
+				<thead>
+					<tr>
+		    		<th>Name</th>
+		    		<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render @breweries.order(name: :asc) %>
+				</tbody>
+			</table>
+</div>

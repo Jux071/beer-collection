@@ -1,0 +1,19 @@
+<div class="row col-md-5">
+	<div class="well well-sm"><h3>Styles <%= link_to 'Add new style', new_style_path, class: 'btn btn-sm btn-primary' %></h3>
+		
+  </div>
+  
+  <div class="panel panel-default">  
+  	<div class="panel-heading"><strong>Style details</strong></div>  
+  		<table class="table table-hover table-striped">	
+				<thead>
+					<tr>
+		    		<th>Name</th>
+		    		<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render @styles.order(name: :asc) %>
+				</tbody>
+			</table>
+</div>

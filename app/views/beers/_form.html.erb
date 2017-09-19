@@ -1,0 +1,21 @@
+<%= form_for @beer, html: { multipart: true } do |form| %>	
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <br>
+  <%= form.label :name %>
+  <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
+  <br>
+  <%= form.label :quantity %>
+  <%= form.text_field :quantity, class: 'form-control' %>
+  <br>
+  <%= form.label :country_id %>
+  <%= form.collection_select :country_id, Country.all, :id, :name, { prompt: 'Choose country'}, class: 'form-control' %>
+  <br>
+  <%= form.label :style_id %>
+  <%= form.collection_select :style_id, Style.all, :id, :name, { prompt: 'Choose style'}, class: 'form-control' %>
+  <br>
+  <%= form.label :brewery_id %>
+  <%= form.collection_select :brewery_id, Brewery.all, :id, :name, { prompt: 'Choose brewery'}, class: 'form-control' %>
+  <br>
+  <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
+<% end %>
