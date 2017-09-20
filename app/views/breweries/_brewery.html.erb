@@ -1,5 +1,6 @@
 <tr>
 	<td><%= link_to brewery.name, brewery_path(brewery) %></td>	
+	<td><center><span class="badge"><%= brewery.beers.count %></span></center></td>
 	<td><%= link_to ' Edit', edit_brewery_path(brewery), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
 			<%= link_to ' Delete', brewery_path(brewery), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
 </tr>

@@ -1,6 +1,7 @@
 <tr>
 	<td><%= image_tag country.image.url(:thumb) %></td>
 	<td><%= link_to country.name, country_path(country) %></td>	
+	<td><center><span class="badge"><%= country.beers.count %></span></center></td>
 	<td><%= link_to ' Edit', edit_country_path(country), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
 			<%= link_to ' Delete', country_path(country), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
 </tr>
