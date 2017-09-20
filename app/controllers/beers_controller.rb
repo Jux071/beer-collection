@@ -2,7 +2,7 @@ class BeersController < ApplicationController
 	before_action :find_beer, { only: [:edit, :update, :show, :destroy] }
 
 	def index
-		@beers = Beer.all
+		@beers = Beer.all.paginate(:page => params[:page], :per_page => 10)
 	end
 
   def new

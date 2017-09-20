@@ -1,10 +1,10 @@
-	<div class="well well-sm"><h3>Beers <%= link_to 'Add new beer', new_beer_path, class: 'btn btn-sm btn-primary' %></h3>
+	<div class="well well-sm well-bgr"><h3>Beers <%= link_to 'Add new beer', new_beer_path, class: 'btn btn-sm btn-primary' %></h3>
 		
   </div>
   
   <div class="panel panel-default">  
   	<div class="panel-heading"><strong>Beer details</strong></div>  
-  		<table class="table table-hover table-striped">	
+  		<table class="table">	
 				<thead>
 					<tr>
 						<th></th>
@@ -20,3 +20,8 @@
 					<%= render @beers.order(name: :asc) %>
 				</tbody>
 			</table>
+<div class="apple_pagination">    
+      <div class="top"><%= page_entries_info @beers %></div>
+
+    <center><%= will_paginate @beers %></center>
+  </div>

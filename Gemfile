@@ -36,6 +36,8 @@ gem 'bootstrap-sass'
 
 gem "paperclip", "~> 5.0.0"
 
+gem 'will_paginate', '>= 3.1'
+
 group :production do
   gem 'pg'
 end

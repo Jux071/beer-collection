@@ -1,4 +1,4 @@
-<div class="well well-sm"><h3>Countries <%= link_to 'Add new country', new_country_path, class: 'btn btn-sm btn-primary' %></h3>
+<div class="well well-sm well-bgr"><h3>Countries <%= link_to 'Add new country', new_country_path, class: 'btn btn-sm btn-primary' %></h3>
 		
   </div>
   
@@ -17,3 +17,7 @@
 					<%= render @countries.order(name: :asc) %>
 				</tbody>
 			</table>
+<div class="apple_pagination">  
+		<div class="top"><%= page_entries_info @countries %></div>  
+    <center><%= will_paginate @countries %></center>
+  </div>

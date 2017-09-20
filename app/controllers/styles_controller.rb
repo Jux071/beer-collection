@@ -2,7 +2,7 @@ class StylesController < ApplicationController
 	before_action :find_style, { only: [:edit, :update, :show, :destroy] }
 
 	def index
-		@styles = Style.all
+		@styles = Style.all.paginate(:page => params[:page], :per_page => 10)
 	end
 
   def new

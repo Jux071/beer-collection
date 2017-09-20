@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
 	before_action :find_country, { only: [:edit, :update, :show, :destroy] }
 
 	def index
-		@countries = Country.all
+		@countries = Country.all.paginate(:page => params[:page], :per_page => 10)
 	end
 
   def new

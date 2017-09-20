@@ -2,7 +2,7 @@ class BreweriesController < ApplicationController
 	before_action :find_brewery, { only: [:edit, :update, :show, :destroy] }
 
 	def index
-		@breweries = Brewery.all
+		@breweries = Brewery.all.paginate(:page => params[:page], :per_page => 10)
 	end
 
   def new
