@@ -3,7 +3,9 @@
 		<tr>
 			<th>Beer</th>
     	<th>Quantity</th>
-    	<th>Actions</th>
+    	<% if logged_in? %>
+		    <th>Actions</th>
+		    <% end %>
 		</tr>
 	</thead>
 	<tbody>
@@ -11,8 +13,10 @@
 <tr>
 	<td><%= link_to beer.name, beer_path(beer) %></td>	
 	<td><%= beer.quantity %></td>	
+	<% if logged_in? %>
 	<td><%= link_to ' Edit', edit_beer_path(beer), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
 			<%= link_to ' Delete', beer_path(beer), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
+			<% end %>
 </tr>
 <% end %>
 </tbody>
