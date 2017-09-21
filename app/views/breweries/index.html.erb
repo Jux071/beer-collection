@@ -1,5 +1,7 @@
-	<div class="well well-sm well-bgr"><h3>Breweries <%= link_to 'Add new brewery', new_brewery_path, class: 'btn btn-sm btn-primary' %></h3>
-		
+	<div class="well well-sm well-bgr"><h3>Breweries 
+	<% if logged_in? %>
+	<%= link_to 'Add new brewery', new_brewery_path, class: 'btn btn-sm btn-primary' %></h3>
+		<% end %>
   </div>
   
   <div class="panel panel-default">  
@@ -9,7 +11,9 @@
 					<tr>
 		    		<th>Name</th>
 		    		<th><center>Total Beers</center></th>
-		    		<th>Actions</th>
+		    		<% if logged_in? %>
+		    <th>Actions</th>
+		    <% end %>
 					</tr>
 				</thead>
 				<tbody>

@@ -1,4 +1,7 @@
-<div class="well well-sm well-bgr"><h3>Styles <%= link_to 'Add new style', new_style_path, class: 'btn btn-sm btn-primary' %></h3>
+<div class="well well-sm well-bgr"><h3>Styles 
+<% if logged_in? %>
+<%= link_to 'Add new style', new_style_path, class: 'btn btn-sm btn-primary' %></h3>
+<% end %>
 </div>
 <div class="panel panel-default">  
   <div class="panel-heading"><strong>Style details</strong></div>  
@@ -7,7 +10,9 @@
 			<tr>
 		    <th>Name</th>
 		    <th><center>Total Beers</center></th>
+		    <% if logged_in? %>
 		    <th>Actions</th>
+		    <% end %>
 			</tr>
 		</thead>
 		<tbody>

@@ -1,5 +1,7 @@
-	<div class="well well-sm well-bgr"><h3>Beers <%= link_to 'Add new beer', new_beer_path, class: 'btn btn-sm btn-primary' %></h3>
-		
+	<div class="well well-sm well-bgr"><h3>Beers 
+	<% if logged_in? %>
+	<%= link_to 'Add new beer', new_beer_path, class: 'btn btn-sm btn-primary' %></h3>
+		<% end %>
   </div>
   
   <div class="panel panel-default">  
@@ -13,7 +15,9 @@
 		    		<th><center>Country</center></th>
 		    		<th>Brewery</th>
 		    		<th><center>Style</center></th>
-		    		<th>Actions</th>
+		    		<% if logged_in? %>
+		    <th>Actions</th>
+		    <% end %>
 					</tr>
 				</thead>
 				<tbody>

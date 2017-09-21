@@ -5,6 +5,8 @@
 	<td><center><%= link_to image_tag(beer.country.image.url(:thumb)), country_path(beer.country_id) %></center></td>
 	<td><%= beer.brewery.name %></td>
 	<td><center><%= beer.style.name %></center></td>
-	<td><%= link_to ' Edit', edit_beer_path(beer), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
+	<% if logged_in? %>
+		<td><%= link_to ' Edit', edit_beer_path(beer), class: 'glyphicon glyphicon-edit btn btn-sm btn-primary' %>
 			<%= link_to ' Delete', beer_path(beer), method: :delete, data: {confirm: "Are you sure?"}, class: 'glyphicon glyphicon-trash btn btn-sm btn-danger' %></td>
+	<% end %>
 </tr>

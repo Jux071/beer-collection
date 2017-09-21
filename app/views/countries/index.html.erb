@@ -1,4 +1,8 @@
-<div class="well well-sm well-bgr"><h3>Countries <%= link_to 'Add new country', new_country_path, class: 'btn btn-sm btn-primary' %></h3>
+<div class="well well-sm well-bgr"><h3>Countries 
+<% if logged_in? %>
+<%= link_to 'Add new country', new_country_path, class: 'btn btn-sm btn-primary' %>
+	<% end %>
+</h3>
 		
   </div>
   
@@ -10,7 +14,9 @@
 						<th></th>
 		    		<th>Name</th>
 		    		<th><center>Total Beers</center></th>
-		    		<th>Actions</th>
+		    		<% if logged_in? %>
+		    <th>Actions</th>
+		    <% end %>
 					</tr>
 				</thead>
 				<tbody>

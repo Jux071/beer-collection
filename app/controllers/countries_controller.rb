@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+	before_action :authorize, { only: [:new, :update, :destroy, :edit] }
 	before_action :find_country, { only: [:edit, :update, :show, :destroy] }
 
 	def index

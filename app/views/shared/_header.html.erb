@@ -1,9 +1,18 @@
 <nav class="navbar navbar-default">
   	<ul class="nav navbar-nav">
-      <a class="navbar-brand" href="http://localhost:3000">BEER</a>
+      <a><%= link_to "BEER COLLECTION", root_path , class: 'navbar-brand' %></a>
       <li><%= link_to "Beers", beers_path %></li>
       <li><%= link_to "Breweries", breweries_path %></li>
       <li><%= link_to "Countries", countries_path %></li>
       <li><%= link_to "Styles", styles_path %></li>
+
+      <% if logged_in? %>
+      	<li><%= link_to session_path, method: :delete do %>
+            <i span class="glyphicon glyphicon-log-out"></i> Logout
+          <% end %>
+          </li>
+      <% else %>
+      	<li><%= link_to 'Login', new_session_path %></li>
+      <% end %>
     </ul> 
   </nav> 
