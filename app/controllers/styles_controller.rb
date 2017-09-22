@@ -49,7 +49,7 @@ class StylesController < ApplicationController
 	private 
 
 	def style_params
-		params.require(:style).permit(:name)
+		params.require(:style).permit(:name, :descriptions)
 	end
   
   def find_style

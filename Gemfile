@@ -34,7 +34,7 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 
-gem "paperclip", "~> 5.0.0"
+#gem "paperclip", "~> 5.0.0"
 
 gem 'will_paginate', '>= 3.1'
 

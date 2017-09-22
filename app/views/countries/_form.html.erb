@@ -2,8 +2,8 @@
 	<%= form.label :name %>
   <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
   <br>
-  <%= form.label :image %>
-  <%= form.file_field :image %>
+  <%= form.label :flag %>
+  <%= form.text_field :flag, class: 'form-control' %>
   <br>
   <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
 <% end %>

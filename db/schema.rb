@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920120652) do
+ActiveRecord::Schema.define(version: 20170922104412) do
 
   create_table "beers", force: :cascade do |t|
     t.string "name", null: false
@@ -20,10 +20,7 @@ ActiveRecord::Schema.define(version: 20170920120652) do
     t.integer "country_id"
     t.integer "style_id"
     t.integer "brewery_id"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
+    t.string "image"
     t.index ["brewery_id"], name: "index_beers_on_brewery_id"
     t.index ["country_id"], name: "index_beers_on_country_id"
     t.index ["style_id"], name: "index_beers_on_style_id"
@@ -33,22 +30,21 @@ ActiveRecord::Schema.define(version: 20170920120652) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "countries", force: :cascade do |t|
     t.string "name", null: false
+    t.string "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "styles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "descriptions"
   end
 
   create_table "users", force: :cascade do |t|

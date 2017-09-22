@@ -1,8 +1,8 @@
 <tr>
-	<td><center><%= link_to image_tag(beer.image.url(:thumb)), beer_path(beer) %></center></td>
+	<td><center><%= link_to image_tag(beer.image, size: "20x50", alt: "Beer"), beer_path(beer) %></center></td>
 	<td><%= link_to beer.name, beer_path(beer) %></td>	
 	<td><center><%= beer.quantity %></center></td>	
-	<td><center><%= link_to image_tag(beer.country.image.url(:thumb)), country_path(beer.country_id) %></center></td>
+	<td><center><%= link_to image_tag(beer.country.flag, size: "25x25"), country_path(beer.country_id) %></center></td>
 	<td><%= beer.brewery.name %></td>
 	<td><center><%= beer.style.name %></center></td>
 	<% if logged_in? %>

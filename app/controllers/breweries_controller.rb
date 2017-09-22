@@ -49,7 +49,7 @@ class BreweriesController < ApplicationController
 	private 
 
 	def brewery_params
-		params.require(:brewery).permit(:name)
+		params.require(:brewery).permit(:name, :image)
 	end
   
   def find_brewery

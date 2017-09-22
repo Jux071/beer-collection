@@ -2,6 +2,8 @@
   <%= form.label :name %>
   <%= form.text_field :name, autofocus: :true, class: 'form-control' %>
   <br>
- 
+ 	<%= form.label :descriptions, 'Description (optional)' %>
+  <%= form.text_area :descriptions, class: 'form-control' %>
+  <br>
   <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
 <% end %>
